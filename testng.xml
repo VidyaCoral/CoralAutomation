@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/home/cid/IdeaProjects/coral-automation">
+        <classes>
+            <class name="api.parent.ParentGetDetails">
+                <methods>
+                    <include name="test_retrieve"/>
+                </methods>
+            </class>
+            <class name="api.parent.ParentRegisterEmail">
+                <methods>
+                    <include name="registerEmail"/>
+                    <include name="verifyEmailRegistration"/>
+                </methods>
+            </class>
+            <class name="ui.guest.CoralAboutUsPageTest">
+                <methods>
+                    <include name="aboutPageTests"/>
+                </methods>
+            </class>
+            <class name="ui.guest.CoralHomePageTest">
+                <methods>
+                    <include name="homepageTests"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
