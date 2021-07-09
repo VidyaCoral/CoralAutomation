@@ -35,6 +35,5 @@ public class CoralParentPageTest extends BaseTest {
         coralHomepage.FAQWebElement(0);
         coralHomepage.Logo().click();
         coralParentPage.WishListWebElement().click();
-
     }
 }
