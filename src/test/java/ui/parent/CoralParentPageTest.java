@@ -16,17 +16,19 @@ public class CoralParentPageTest extends BaseTest {
     public void Login()  {
         CoralHomePage coralHomepage = new CoralHomePage(getDriver());
         CoralLoginPage coralLoginPage = new CoralLoginPage(getDriver());
-        coralHomepage.JoinWebElement().click();
-        coralLoginPage.ParentFirstName().sendKeys("test");
-        coralLoginPage.ParentLastName().sendKeys("test");
+        coralHomepage.LoginWebElement().click();
         coralLoginPage.SetEmailId();
         coralLoginPage.SetPassword();
-        coralLoginPage.Terms().click();
         coralLoginPage.SignIn();
+       // coralLoginPage.Logout();
+    }
+
+    public void Logout() {
+        CoralLoginPage coralLoginPage = new CoralLoginPage(getDriver());
         coralLoginPage.Logout();
     }
 
-    @Test
+    @Test (enabled = false)
     public void VerifyPageLinks() throws InterruptedException {
         CoralHomePage coralHomepage = new CoralHomePage(getDriver());
         CoralParentPage coralParentPage = new CoralParentPage(getDriver());
@@ -35,5 +37,24 @@ public class CoralParentPageTest extends BaseTest {
         coralHomepage.FAQWebElement(0);
         coralHomepage.Logo().click();
         coralParentPage.WishListWebElement().click();
+    }
+
+    @Test
+    public void VerifyPageTabs() {
+        Login();
+        CoralParentPage coralParentPage = new CoralParentPage(getDriver());
+        coralParentPage.VerifyClassTab().click();
+        coralParentPage.VerifyProfileTab().click();
+        coralParentPage.VerifyScheduleTab().click();
+        coralParentPage.VerifyHomeTab().click();
+        Logout();
+    }
+    @Test
+    public void VerifyUpcomingScheduleTab() {
+        Login();
+        CoralParentPage coralParentPage = new CoralParentPage(getDriver());
+        coralParentPage.UpComingScheduleTab().isDisplayed();
+        coralParentPage.VerifyUpComingSchedule();
+        Logout();
     }
 }

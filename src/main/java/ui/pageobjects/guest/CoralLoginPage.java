@@ -27,7 +27,7 @@ public class CoralLoginPage extends BasePage {
     @FindBy (xpath=".//*[@type='text']") WebElement passwordText;
     @FindBy (css="span.ant-input-suffix") WebElement eyeIcon;
     @FindBy (xpath=".//*[@type='submit']") List <WebElement> signinButton;
-    @FindBy (css="a.pd-parent-header-link") WebElement logout;
+    @FindBy (linkText="Logout") WebElement logout;
     @FindBy(css="button.ant-btn.ant-btn-primary.pd-button-guest.pd-button-guest-none.pd-button-guest-font-small.pd-button-guest-color-blue") WebElement googleButton;
     @FindBy (xpath=".//*[@type='email']") WebElement gmailAccount;
     @FindBy (xpath=".//*[@type='password']") WebElement gmailPassword;
